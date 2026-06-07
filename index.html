@@ -7,7 +7,7 @@
       name="description"
       content="GELD is a private digital signal for future wealth, access, and quiet power."
     />
-    <title>GELD — Private Signal</title>
+    <title>GELD - Private Signal</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -25,6 +25,8 @@
     <canvas class="noise-field" aria-hidden="true"></canvas>
     <div class="grain" aria-hidden="true"></div>
     <div class="vignette" aria-hidden="true"></div>
+    <div class="cursor" aria-hidden="true"></div>
+    <div class="cursor-dot" aria-hidden="true"></div>
 
     <header class="topbar" aria-label="GELD navigation">
       <a class="brand magnetic" href="#intro" aria-label="GELD home">GELD</a>
@@ -40,7 +42,9 @@
     </header>
 
     <nav id="section-nav" aria-label="Navegación de secciones">
+      <button class="nav-btn" type="button" data-nav-prev aria-label="Sección anterior">↑</button>
       <div id="nav-dots" class="nav-dots" aria-hidden="false"></div>
+      <button class="nav-btn" type="button" data-nav-next aria-label="Sección siguiente">↓</button>
     </nav>
 
     <main id="smooth-wrapper">
@@ -51,10 +55,11 @@
           muted
           loop
           playsinline
-          preload="metadata"
+          poster="https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=2200&q=85"
         >
           <source
-            src="853889-hd_1920_1080_25fps.mp4"
+            src="https://videos.pexels.com/video-files/853889/853889-hd_1920_1080_25fps.mp4"
+            type="video/mp4"
           />
         </video>
         <div class="scene-image hero-fallback" aria-hidden="true"></div>
@@ -97,9 +102,9 @@
           <h2 class="chapter-title reveal">Algunas puertas solo aparecen una vez.</h2>
           <p class="value-line reveal">El valor real no necesita explicar por qué cuesta entrar.</p>
           <p class="chapter-copy reveal">
-            GELD no se descubre entre ruido. Se mueve por reconocimiento,
-            timing, reputación y el instinto raro de entrar antes de que el
-            mundo entienda lo que se está formando.
+            GELD no se descubre entre ruido. Se mueve por reconocimiento, timing,
+            reputación y el instinto raro de entrar antes de que el mundo
+            entienda lo que se está formando.
           </p>
           <div class="chapter-grid reveal">
             <span>Private Signal</span>
@@ -206,14 +211,14 @@
             <p>Si tus objetivos pesan más que tus excusas.</p>
             <p>Si entiendes que el estatus real no se anuncia.</p>
           </div>
-          <button class="threshold-link reveal" type="button" data-unlock-access>Access</button>
+          <button class="threshold-link" type="button" data-unlock-access>Access</button>
         </div>
       </section>
 
       <section class="scene final-scene is-locked" id="invitation" data-theme="invitation">
         <div
           class="scene-image"
-          style="--image: url('https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1800&q=85')"
+          style="--image: url('https://images.pexels.com/photos/17717729/pexels-photo-17717729.jpeg?auto=compress&cs=tinysrgb&w=2400')"
           aria-hidden="true"
         ></div>
         <div class="final-orbit" aria-hidden="true"></div>
@@ -235,27 +240,31 @@
       </section>
     </main>
 
-  <!-- Secret scene placed outside main to avoid inclusion in nav/scroll -->
-  <section class="scene secret-scene" id="secret" aria-hidden="true">
-    <div class="secret-overlay" aria-hidden="true"></div>
-    <div class="scene-content secret-content">
-      <h2 class="secret-title">Premium Server</h2>
-      <p class="secret-sub">Private access — request entry</p>
+    <section class="scene secret-scene" id="secret" aria-hidden="true">
+      <div class="secret-overlay" aria-hidden="true"></div>
+      <div class="scene-content secret-content">
+        <h2 class="secret-title">Premium Server</h2>
+        <p class="secret-sub">Private access - request entry</p>
 
-      <form id="secret-form" class="secret-form" autocomplete="off">
-        <label for="secret-email">Enter email:</label>
-        <div class="secret-input-row">
-          <input id="secret-email" name="email" type="email" required placeholder="name@domain.com" />
-          <button type="submit" class="primary-cta">Send</button>
+        <form id="secret-form" class="secret-form" autocomplete="off">
+          <label for="secret-email">Enter email:</label>
+          <div class="secret-input-row">
+            <input id="secret-email" name="email" type="email" required placeholder="name@domain.com" />
+            <button type="submit" class="primary-cta">Send</button>
+          </div>
+          <p class="secret-note" aria-live="polite"></p>
+        </form>
+
+        <div class="secret-discord">
+          <p>
+            Accede a nuestro grupo gratuito en Discord y mantente dentro de la
+            primera ola. El email sirve para la lista de espera de contenido
+            exclusivo.
+          </p>
+          <a class="primary-cta discord-link" href="https://discord.gg/XQjuCmYg" target="_blank" rel="noopener noreferrer">Unirme</a>
         </div>
-        <p class="secret-note" aria-live="polite"></p>
-      </form>
-      <div class="secret-discord">
-        <p>Accede a nuestro grupo gratuito en Discord y mantente dentro de la primera ola. El email sirve para la lista de espera de contenido exclusivo.</p>
-        <a class="primary-cta discord-link" href="https://discord.gg/XQjuCmYg" target="_blank" rel="noopener noreferrer">Unirme</a>
       </div>
-    </div>
-  </section>
+    </section>
 
     <script src="script.js" defer></script>
   </body>
